@@ -2,6 +2,7 @@ package calculator;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterAll;
@@ -64,22 +65,33 @@ class StringCalculatorShould {
     //String with a single negative number
     //should throw exception
     //negative number not allowed followed by numbers
-//    @Test
-//	  @Order(7)
-//    void string_with_single_negative_number() {
-//    	 StringCalculator stringCalculator = new StringCalculator();
-//    	 stringCalculator.add("-7");
-//    }
+    @Test
+	  @Order(7)
+    void string_with_single_negative_number() {
+    	
+    	 try {
+			StringCalculator stringCalculator = new StringCalculator();
+			 stringCalculator.add("-7");
+		} catch (RuntimeException e) {
+			assertEquals("Negatives not allowed [-7]", e.getMessage());
+			e.getMessage();
+		}
+    }
     
     //String with a multiple negative number
     //should throw exception
     //negative number not allowed followed by numbers
-//    @Test
-//	@Order(8)
-//    void string_with_mutiple_negative_number() {
-//    	 StringCalculator stringCalculator = new StringCalculator();
-//    	 stringCalculator.add("-7,-3,-4");
-//    }
+    @Test
+	@Order(8)
+    void string_with_mutiple_negative_number() {
+    	 try {
+			StringCalculator stringCalculator = new StringCalculator();
+			 stringCalculator.add("-7,-3,-4");
+		} catch (Exception e) {
+			assertEquals("Negatives not allowed [-7, -3, -4]", e.getMessage());
+			e.getMessage();
+		}
+    }
     
     
    //Test Case for Numbers bigger than 1000
@@ -124,6 +136,6 @@ class StringCalculatorShould {
     @Test
     @AfterAll
     static void number_of_times_Add_method_called() {
-    	 assertEquals(10, StringCalculator.GetCalledCount());
+    	 assertEquals(12, StringCalculator.GetCalledCount());
     }
 }

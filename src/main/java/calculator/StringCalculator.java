@@ -79,7 +79,13 @@ class StringCalculator {
     	else if(input.startsWith("//")) {
     		String regex = "//(.*)\n(.*)";
     		Matcher m = Pattern.compile(regex).matcher(input);
-    		m.matches();
+    		
+    		//if match fail
+    		//stop end the code
+    		if(!m.matches()) {
+    			return -1;
+    		}
+    	
     		
     		//Get the new delimiter from 1st group
     		String delim =  m.group(1);
