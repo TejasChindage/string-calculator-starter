@@ -19,10 +19,12 @@ class StringCalculator {
     		//If input contains , 
     		//separate no by 
     		
-    		StringTokenizer token = new StringTokenizer(input, ",");
+    		StringTokenizer token = new StringTokenizer(input, ",\n");
     		int sum = 0;
+    		
     		while(token.hasMoreElements()) {
-    			sum  = sum + Integer.parseInt(token.nextToken());
+    			String t = token.nextToken();
+    			sum  = sum + Integer.parseInt(t);
     			
     		}
     		
