@@ -36,11 +36,12 @@ class StringCalculator {
     		//check for negative number exception
     		// If list length if greater than zero
     		//then throw exception
+    		int num = convertToInt(input);
     		if(list.size() > 0) {
     			throw new RuntimeException("Negatives not allowed "+list.toString());
     		}
     		
-    		return convertToInt(input);
+    		return num;
     	}
     	
     	//IF input contains , 

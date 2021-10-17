@@ -101,11 +101,20 @@ class StringCalculatorShould {
    	 	assertEquals(6, stringCalculator.add("//[***]\n1***2***3"));
     }
     
+    //Test Case for multiple Delimiter of length single char
+    //Should return the sum of numbers separated by delimiter
+    @Test
+    @Order(11)
+    void string_with_mutiple_delimeter_of_single_char() {
+    	StringCalculator stringCalculator = new StringCalculator();
+   	 	assertEquals(6, stringCalculator.add("//[***]\n1***2***3"));
+    }
+    
     //Test Case for no of times 
     //Add method is called
     @Test
     @AfterAll
     static void number_of_times_Add_method_called() {
-    	 assertEquals(8, StringCalculator.GetCalledCount());
+    	 assertEquals(10, StringCalculator.GetCalledCount());
     }
 }
