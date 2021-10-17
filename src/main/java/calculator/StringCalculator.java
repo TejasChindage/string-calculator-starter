@@ -13,13 +13,11 @@ class StringCalculator {
     		return 0;
     	}
     	
-    	//If input is single digit
+    	//If input is single digit or a single negative number
 		//then execute this condition
-    	
-    	else if(input.length() == 1) {
+    	else if(input.length() == 1 || input.length() == 2) {
     		// return that digit
-    		
-    		return Integer.parseInt(input);
+    		return convertToInt(input);
     	}
     	
     	//IF input contains , 
@@ -37,7 +35,7 @@ class StringCalculator {
     		int sum = 0;
     		while(token.hasMoreElements()) {
     			String t = token.nextToken();
-    			sum  = sum + Integer.parseInt(t);
+    			sum  = sum + convertToInt(t);
     		}
     		return sum;
     	}
@@ -57,7 +55,7 @@ class StringCalculator {
     		int sum = 0;
     		while(token.hasMoreElements()) {
     			String t = token.nextToken();
-    			sum  = sum + Integer.parseInt(t);
+    			sum  = sum + convertToInt(t);
     		}
     		return sum;
     	}
@@ -65,5 +63,15 @@ class StringCalculator {
     		return -1;
     	}
     }
-
+    
+    //Method convert string to integer
+    private static int convertToInt(String input) {
+    	int i = Integer.parseInt(input);
+    	if(i < 0) {
+    		// if a negative number is there
+    		//then throw runtime exception
+    		throw new RuntimeException("Negatives are not allowed "+i);
+    	}
+    	return i;
+    }
 }
