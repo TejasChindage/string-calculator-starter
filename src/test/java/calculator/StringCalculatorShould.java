@@ -51,4 +51,14 @@ class StringCalculatorShould {
     	 assertEquals(3, stringCalculator.add("//;\n1;2"));
     }
     
+    
+    //String with negative number
+    //should throw exception
+    //negative number not allowed followed by numbers
+    @Test
+    void string_with_single_negative_number() {
+    	 StringCalculator stringCalculator = new StringCalculator();
+    	 assertEquals(-1, stringCalculator.add("-1,2"), "Should throw exception negative not allowed");
+    }
+    
 }
