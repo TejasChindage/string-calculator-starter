@@ -6,12 +6,19 @@ import java.util.StringTokenizer;
 
 class StringCalculator {
 	
-	List<Integer> list = new ArrayList<Integer>();
+	//List of negative numbers
+	List<Integer> list = new ArrayList<Integer>();	
 	
-
+	//count to check no of times add method is called
+	static int count;
 	
 	
     public int add(String input) {
+    	//Increment count 
+    	//Every time add method is called
+    	count++;
+    	
+    	
     	//If input is empty then return 0
 		//then execute this condition
     	if(input.isEmpty()) {
@@ -106,5 +113,9 @@ class StringCalculator {
     	}
     	return i;
     }
+
+	public static int GetCalledCount() {
+		return count;
+	}
 
 }
