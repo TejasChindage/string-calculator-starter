@@ -128,9 +128,10 @@ class StringCalculator {
     		//if a number is grater than 1000
     		//the ignore it and return 0
     		return 0;
-    	}else {
-    		return i;
     	}
+		
+    		return i;
+    	
     }
 
 	public static int GetCalledCount() {
