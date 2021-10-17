@@ -131,6 +131,7 @@ class StringCalculatorShould {
    	 	assertEquals(6, stringCalculator.add("//[**][%%]\n1**2%%3"));
     }
     
+    
     //Test Case for no of times 
     //Add method is called
     @Test
