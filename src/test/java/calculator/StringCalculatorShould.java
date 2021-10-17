@@ -97,6 +97,6 @@ class StringCalculatorShould {
     @Test
     @AfterAll
     static void number_of_times_Add_method_called() {
-    	 assertEquals(6, StringCalculator.GetCalledCount());
+    	 assertEquals(7, StringCalculator.GetCalledCount());
     }
 }

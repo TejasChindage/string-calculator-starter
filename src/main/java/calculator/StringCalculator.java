@@ -110,8 +110,13 @@ class StringCalculator {
     		//then add to list
     		list.add(i);
     		return 0;
+    	}else if(i > 1000) {
+    		//if a number is grater than 1000
+    		//the ignore it and return 0
+    		return 0;
+    	}else {
+    		return i;
     	}
-    	return i;
     }
 
 	public static int GetCalledCount() {
