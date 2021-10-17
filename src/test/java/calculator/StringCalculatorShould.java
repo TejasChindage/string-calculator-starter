@@ -48,7 +48,7 @@ class StringCalculatorShould {
     @Test
     void string_with_different_delimiter() {
     	 StringCalculator stringCalculator = new StringCalculator();
-    	 assertEquals(3, stringCalculator.add("//;\\n1;2"));
+    	 assertEquals(3, stringCalculator.add("//;\n1;2"));
     }
     
 }
