@@ -3,6 +3,8 @@ package calculator;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 class StringCalculator {
@@ -70,18 +72,22 @@ class StringCalculator {
     		return sum;
     	}
     	
-    	//IF input contains '//' 
+    	//IF input starts with '//' 
     	//then execute this condition
     	
-    	else if(input.contains("//")) {
+    	else if(input.startsWith("//")) {
+    		String regex = "//(.*)\n(.*)";
+    		Matcher m = Pattern.compile(regex).matcher(input);
+    		m.matches();
     		
-    		//Get the new delimiter first
-    		char delim =  input.charAt(2);
+    		//Get the new delimiter from 1st group
+    		String delim =  m.group(1);
     		
-    		//get the substring of after '\n'
-    		String s = input.substring(input.indexOf("\n") + 1);
-
-    		StringTokenizer token = new StringTokenizer(s, String.valueOf(delim));
+    		
+    		//get the substring of numbers from second group
+    		String s = m.group(2);
+    	
+    		StringTokenizer token = new StringTokenizer(s, delim);
     		int sum = 0;
     		while(token.hasMoreElements()) {
     			String t = token.nextToken();
