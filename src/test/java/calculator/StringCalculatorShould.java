@@ -55,19 +55,27 @@ class StringCalculatorShould {
     //String with a single negative number
     //should throw exception
     //negative number not allowed followed by numbers
-    @Test
-    void string_with_single_negative_number() {
-    	 StringCalculator stringCalculator = new StringCalculator();
-    	 stringCalculator.add("-7");
-    }
+//    @Test
+//    void string_with_single_negative_number() {
+//    	 StringCalculator stringCalculator = new StringCalculator();
+//    	 stringCalculator.add("-7");
+//    }
     
     //String with a multiple negative number
     //should throw exception
     //negative number not allowed followed by numbers
-    @Test
-    void string_with_mutiple_negative_number() {
-    	 StringCalculator stringCalculator = new StringCalculator();
-    	 stringCalculator.add("-7,-3,-4");
-    }
+//    @Test
+//    void string_with_mutiple_negative_number() {
+//    	 StringCalculator stringCalculator = new StringCalculator();
+//    	 stringCalculator.add("-7,-3,-4");
+//    }
     
+    
+    //Test Case for no of times 
+    //Add method is called
+    @Test
+    void number_of_times_Add_method_called() {
+    	 StringCalculator stringCalculator = new StringCalculator();
+    	 assertEquals(3, stringCalculator.GetCalledCount());
+    }
 }

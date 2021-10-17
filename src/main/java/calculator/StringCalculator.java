@@ -8,11 +8,12 @@ class StringCalculator {
 	
 	List<Integer> list = new ArrayList<Integer>();
 	
+
+	
+	
     public int add(String input) {
-    	
     	//If input is empty then return 0
 		//then execute this condition
-    	
     	if(input.isEmpty()) {
     		return 0;
     	}
@@ -105,4 +106,5 @@ class StringCalculator {
     	}
     	return i;
     }
+
 }
