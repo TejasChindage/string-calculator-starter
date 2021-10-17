@@ -92,11 +92,19 @@ class StringCalculatorShould {
     }
     
     
+    
+    @Test
+    @Order(10)
+    void string_with_delimeter_of_any_length() {
+    	StringCalculator stringCalculator = new StringCalculator();
+   	 	assertEquals(6, stringCalculator.add("//[***]\n1***2***3"));
+    }
+    
     //Test Case for no of times 
     //Add method is called
     @Test
     @AfterAll
     static void number_of_times_Add_method_called() {
-    	 assertEquals(7, StringCalculator.GetCalledCount());
+    	 assertEquals(8, StringCalculator.GetCalledCount());
     }
 }
