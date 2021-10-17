@@ -34,5 +34,13 @@ class StringCalculatorShould {
     	 assertEquals(27, stringCalculator.add("13,2,5,7"));
     }
     
+    //String with new line as delimiters
+    //between number test case
+    @Test
+    void string_with_new_line_as_delimeter() {
+    	 StringCalculator stringCalculator = new StringCalculator();
+    	 assertEquals(6, stringCalculator.add("1\n2,3"));
+    }
+    
     
 }
