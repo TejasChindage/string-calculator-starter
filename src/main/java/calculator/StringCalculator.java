@@ -1,9 +1,13 @@
 package calculator;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 
 class StringCalculator {
-
+	
+	List<Integer> list = new ArrayList<Integer>();
+	
     public int add(String input) {
     	
     	//If input is empty then return 0
@@ -16,7 +20,15 @@ class StringCalculator {
     	//If input is single digit or a single negative number
 		//then execute this condition
     	else if(input.length() == 1 || input.length() == 2) {
+    		
     		// return that digit
+    		//check for negative number exception
+    		// If list length if greater than zero
+    		//then throw exception
+    		if(list.size() > 0) {
+    			throw new RuntimeException("Negatives not allowed "+list.toString());
+    		}
+    		
     		return convertToInt(input);
     	}
     	
@@ -37,6 +49,15 @@ class StringCalculator {
     			String t = token.nextToken();
     			sum  = sum + convertToInt(t);
     		}
+    		
+    		//check for negative number exception
+    		// If list length if greater than zero
+    		//then throw exception
+    		
+    		if(list.size() > 0) {
+    			throw new RuntimeException("Negatives not allowed "+list.toString());
+    		}
+    		
     		return sum;
     	}
     	
@@ -57,6 +78,15 @@ class StringCalculator {
     			String t = token.nextToken();
     			sum  = sum + convertToInt(t);
     		}
+    		
+    		//check for negative number exception
+    		// If list length if greater than zero
+    		//then throw exception
+    		
+    		if(list.size() > 0) {
+    			throw new RuntimeException("Negatives not allowed "+list.toString());
+    		}
+    		
     		return sum;
     	}
     	else {
@@ -65,12 +95,13 @@ class StringCalculator {
     }
     
     //Method convert string to integer
-    private static int convertToInt(String input) {
+    private int convertToInt(String input) {
     	int i = Integer.parseInt(input);
     	if(i < 0) {
     		// if a negative number is there
-    		//then throw runtime exception
-    		throw new RuntimeException("Negatives are not allowed "+i);
+    		//then add to list
+    		list.add(i);
+    		return 0;
     	}
     	return i;
     }

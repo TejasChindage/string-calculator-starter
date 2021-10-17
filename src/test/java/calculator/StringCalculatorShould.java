@@ -64,10 +64,10 @@ class StringCalculatorShould {
     //String with a multiple negative number
     //should throw exception
     //negative number not allowed followed by numbers
-//    @Test
-//    void string_with_mutiple_negative_number() {
-//    	 StringCalculator stringCalculator = new StringCalculator();
-//    	 stringCalculator.add("-7,-3,-4");
-//    }
+    @Test
+    void string_with_mutiple_negative_number() {
+    	 StringCalculator stringCalculator = new StringCalculator();
+    	 stringCalculator.add("-7,-3,-4");
+    }
     
 }
