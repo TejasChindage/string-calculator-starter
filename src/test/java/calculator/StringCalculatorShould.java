@@ -82,6 +82,16 @@ class StringCalculatorShould {
     }
     
     
+   //Test Case for Numbers bigger than 1000
+   //Should be ignored
+    @Test
+    @Order(9)
+    void string_with_number_greater_than_1000() {
+    	StringCalculator stringCalculator = new StringCalculator();
+   	 	assertEquals(2, stringCalculator.add("1001,2"));
+    }
+    
+    
     //Test Case for no of times 
     //Add method is called
     @Test
