@@ -24,7 +24,14 @@ class StringCalculatorShould {
     @Test
     void string_with_two_number_should_return_sum_of_two_number() {
     	 StringCalculator stringCalculator = new StringCalculator();
-    	 assertEquals(15, stringCalculator.add("13,2"));
+    	 assertEquals(6, stringCalculator.add("1,2"));
+    }
+    
+  //String with any numbers test case
+    @Test
+    void string_with_any_number_should_return_sum_of_two_number() {
+    	 StringCalculator stringCalculator = new StringCalculator();
+    	 assertEquals(27, stringCalculator.add("13,2,5,7"));
     }
     
     

@@ -7,13 +7,12 @@ class StringCalculator {
     public int add(String input) {
     	
     	//If input is empty then return 0
-    	if(input.isEmpty())
+    	if(input.isEmpty()) {
     		return 0;
-    	else if(input.length() == 1) {
+    	}else if(input.length() == 1) {
     		
     		//If input is single digit 
     		// return that digit
-    		
     		return Integer.parseInt(input);
     	}else if(input.contains(",")) {
     		
