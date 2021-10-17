@@ -52,7 +52,7 @@ class StringCalculatorShould {
     }
     
     
-    //String with negative number
+    //String with a single negative number
     //should throw exception
     //negative number not allowed followed by numbers
     @Test
@@ -60,5 +60,14 @@ class StringCalculatorShould {
     	 StringCalculator stringCalculator = new StringCalculator();
     	 stringCalculator.add("-7");
     }
+    
+    //String with a multiple negative number
+    //should throw exception
+    //negative number not allowed followed by numbers
+//    @Test
+//    void string_with_mutiple_negative_number() {
+//    	 StringCalculator stringCalculator = new StringCalculator();
+//    	 stringCalculator.add("-7,-3,-4");
+//    }
     
 }
