@@ -42,5 +42,13 @@ class StringCalculatorShould {
     	 assertEquals(6, stringCalculator.add("1\n2,3"));
     }
     
+    //String with different delimiters
+    //should return sum of two numbers
+    //Separated by delimiter
+    @Test
+    void string_with_different_delimiter() {
+    	 StringCalculator stringCalculator = new StringCalculator();
+    	 assertEquals(3, stringCalculator.add("//;\\n1;2"));
+    }
     
 }
