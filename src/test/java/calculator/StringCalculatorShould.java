@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Order;
 
 class StringCalculatorShould {
 	
-	//Empty String test case
+//	//Empty String test case
     @Test
     @Order(1)
     void empty_string_should_return_0() {
@@ -18,7 +18,7 @@ class StringCalculatorShould {
         assertEquals(0, stringCalculator.add(""));
     }
     
-    //String with single numbers test case
+//    //String with single numbers test case
     @Test
     @Order(2)
     void string_with_single_number_should_return_number_as_int() {
@@ -26,7 +26,7 @@ class StringCalculatorShould {
         assertEquals(1, stringCalculator.add("1"));
     }
     
-    //String with two numbers test case
+//    //String with two numbers test case
     @Test
     @Order(3)
     void string_with_two_number_should_return_sum_of_two_number() {
@@ -34,7 +34,7 @@ class StringCalculatorShould {
     	 assertEquals(3, stringCalculator.add("1,2"));
     }
     
-  //String with any numbers test case
+//  //String with any numbers test case
     @Test
     @Order(4)
     void string_with_any_number_should_return_sum_of_two_number() {
@@ -42,8 +42,8 @@ class StringCalculatorShould {
     	 assertEquals(27, stringCalculator.add("13,2,5,7"));
     }
     
-    //String with new line as delimiters
-    //between number test case
+//    //String with new line as delimiters
+//    //between number test case
     @Test
     @Order(5)
     void string_with_new_line_as_delimeter() {
@@ -62,9 +62,9 @@ class StringCalculatorShould {
     }
     
     
-    //String with a single negative number
-    //should throw exception
-    //negative number not allowed followed by numbers
+//    //String with a single negative number
+//    //should throw exception
+//    //negative number not allowed followed by numbers
     @Test
 	  @Order(7)
     void string_with_single_negative_number() {
@@ -78,9 +78,9 @@ class StringCalculatorShould {
 		}
     }
     
-    //String with a multiple negative number
-    //should throw exception
-    //negative number not allowed followed by numbers
+//    //String with a multiple negative number
+//    //should throw exception
+//    //negative number not allowed followed by numbers
     @Test
 	@Order(8)
     void string_with_mutiple_negative_number() {
@@ -94,8 +94,8 @@ class StringCalculatorShould {
     }
     
     
-   //Test Case for Numbers bigger than 1000
-   //Should be ignored
+//   //Test Case for Numbers bigger than 1000
+//   //Should be ignored
     @Test
     @Order(9)
     void string_with_number_greater_than_1000() {
@@ -104,8 +104,8 @@ class StringCalculatorShould {
     }
     
     
-    //Test Case for Delimiter of any length
-    //Should return the sum of numbers
+//    //Test Case for Delimiter of any length
+//    //Should return the sum of numbers
     @Test
     @Order(10)
     void string_with_delimeter_of_any_length() {
@@ -121,14 +121,21 @@ class StringCalculatorShould {
     	StringCalculator stringCalculator = new StringCalculator();
    	 	assertEquals(6, stringCalculator.add("//[*][%]\n1*2%3"));
     }
-    
-    //Test Case for multiple Delimiter of length longer than one char
-    //Should return the sum of numbers separated by delimiter
+//    
+//    //Test Case for multiple Delimiter of length longer than one char
+//    //Should return the sum of numbers separated by delimiter
     @Test
     @Order(12)
     void string_with_mutiple_delimeter_of_length_longer_than_one_char() {
     	StringCalculator stringCalculator = new StringCalculator();
    	 	assertEquals(6, stringCalculator.add("//[**][%%]\n1**2%%3"));
+    }
+    
+    @Test
+    @Order(13)
+    void string_greater() {
+    	StringCalculator stringCalculator = new StringCalculator();
+   	 	assertEquals(1010, stringCalculator.add("999,11,1000, 2000"));
     }
     
     
@@ -137,6 +144,6 @@ class StringCalculatorShould {
     @Test
     @AfterAll
     static void number_of_times_Add_method_called() {
-    	 assertEquals(12, StringCalculator.GetCalledCount());
+    	 assertEquals(13, StringCalculator.GetCalledCount());
     }
 }

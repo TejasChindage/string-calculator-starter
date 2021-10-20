@@ -60,6 +60,9 @@ class StringCalculator {
     		while(token.hasMoreElements()) {
     			String t = token.nextToken();
     			sum  = sum + convertToInt(t);
+    			if(sum > 1000) {
+    				return sum;
+    			}
     		}
     		
     		//check for negative number exception
@@ -124,6 +127,7 @@ class StringCalculator {
     		//then add to list
     		list.add(i);
     		return 0;
+    	
     	}else if(i > 1000) {
     		//if a number is grater than 1000
     		//the ignore it and return 0
